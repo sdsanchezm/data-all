@@ -1,5 +1,6 @@
 # Configuration
-datafile = 'students.csv'
+datafile = '../datasources/students.csv'
+outdir = '../out'
 width = 1200
 height = 700
 
@@ -25,7 +26,7 @@ set style histogram clustered gap 1
 set style fill solid 0.75 border
 
 # ===== Exam 1 Graph =====
-set output 'exam1_scores.png'
+set output outdir . '/exam1_scores.png'
 set title 'Exam 1 Scores' font ',12' textcolor rgb '#333333'
 set xlabel 'Student Index' font ',10'
 set ylabel 'Score' font ',10'
@@ -33,7 +34,7 @@ set key top left font ',9'
 plot datafile skip 1 using 3:xticlabels(1) title sprintf('Exam 1 (Mean: %.2f)', exam1_mean) lc rgb "#1f77b4"
 
 # ===== Exam 2 Graph =====
-set output 'exam2_scores.png'
+set output outdir . '/exam2_scores.png'
 set title 'Exam 2 Scores' font ',12' textcolor rgb '#333333'
 set xlabel 'Student Index' font ',10'
 set ylabel 'Score' font ',10'
@@ -41,7 +42,7 @@ set key top left font ',9'
 plot datafile skip 1 using 4:xticlabels(1) title sprintf('Exam 2 (Mean: %.2f)', exam2_mean) lc rgb "#ff7f0e"
 
 # ===== Exam 3 Graph =====
-set output 'exam3_scores.png'
+set output outdir . '/exam3_scores.png'
 set title 'Exam 3 Scores' font ',12' textcolor rgb '#333333'
 set xlabel 'Student Index' font ',10'
 set ylabel 'Score' font ',10'
@@ -49,7 +50,7 @@ set key top left font ',9'
 plot datafile skip 1 using 5:xticlabels(1) title sprintf('Exam 3 (Mean: %.2f)', exam3_mean) lc rgb "#2ca02c"
 
 # ===== Final Exam Graph =====
-set output 'final_scores.png'
+set output outdir . '/final_scores.png'
 set title 'Final Exam Scores' font ',12' textcolor rgb '#333333'
 set xlabel 'Student Index' font ',10'
 set ylabel 'Score' font ',10'
@@ -57,7 +58,7 @@ set key top left font ',9'
 plot datafile skip 1 using 6:xticlabels(1) title sprintf('Final Exam (Mean: %.2f)', final_mean) lc rgb "#d62728"
 
 # ===== Combined Comparison Graph =====
-set output 'all_exams_comparison.png'
+set output outdir . '/all_exams_comparison.png'
 set title 'Student Exam Scores Comparison' font ',12' textcolor rgb '#333333'
 set xlabel 'Student Index' font ',10'
 set ylabel 'Score' font ',10'
