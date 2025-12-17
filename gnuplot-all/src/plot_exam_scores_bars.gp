@@ -1,6 +1,6 @@
 # Configuration
 datafile = '../datasources/students.csv'
-outdir = '../out'
+outdir = '../out_graphs'
 width = 1200
 height = 700
 
